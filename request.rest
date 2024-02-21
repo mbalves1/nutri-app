@@ -1,0 +1,94 @@
+
+###
+POST https://backend-finplan.vercel.app/api/services
+Content-Type: application/json
+
+{
+  "name": "Mercado",
+  "description": "Compras do mes",
+  "type": "Saída",
+  "value": 400,
+  "month": "Março",
+  "attached": {
+    "name": "Murilo B",
+    "bank": "Picpay",
+    "type": "Crédito",
+    "flag": "Mastercard",
+    "expiration": "03/10",
+    "number_card": 22223478945335,
+    "code": 199
+  }
+}
+
+###
+POST https://backend-finplan.vercel.app/api/transactions
+Content-Type: application/json
+
+{
+  "name": "FII",
+  "description": "Salario",
+  "type": "Entrada",
+  "value": 150,
+  "month": "Março"
+}
+
+###
+POST http://localhost:3001/api/transactions
+Content-Type: application/json
+
+{
+  "name": "FII",
+  "description": "Salario",
+  "type": "Entrada",
+  "value": 150,
+  "month": "Março"
+}
+
+###
+POST https://backend-finplan.vercel.app/api/cards
+Content-Type: application/json
+
+{
+  "name": "Murilo B",
+  "bank": "Picpay",
+  "type": "Crédito",
+  "flag": "Mastercard",
+  "expiration": "03/10",
+  "number_card": 22223478945335,
+  "code": 199
+}
+
+###
+GET https://backend-finplan.vercel.app/api/cards
+
+
+###
+GET http://localhost:3000/api/services
+
+###
+GET http://localhost:3000/api/services/6472028dc110d969ac973e16
+
+###
+DELETE http://localhost:3000/api/services/647207461a0c636752368084
+
+###
+DELETE https://backend-finplan.vercel.app/api/cards/64c56cb58e179ba351a87d34
+
+###
+PUT https://backend-finplan.vercel.app/api/services/64722cfc664089f8321a1716
+Content-Type: application/json
+
+{
+  "name": "Aluguel",
+  "description": "Aluguel teste",
+  "type": "Saída",
+  "method_payment": "cartao",
+  "value": 1500,
+  "month": "Março"
+}
+
+# auth
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
