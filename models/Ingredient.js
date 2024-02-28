@@ -5,14 +5,14 @@ const { Schema } = mongoose
 const { userSchema } = require("./Auth")
 
 const ingredientSchema = new Schema({
-  name: String,
-  carbvalue: Number,
-  quantityvalue: Number,
-  unity: String,
-  type: String,
-  userid: String
-},
-{ timestamps: true }
+    name: String,
+    carbvalue: Schema.Types.Decimal128, // stores a
+    quantityvalue: Number,
+    unity: String,
+    type: String,
+    userid: String
+  },
+  { timestamps: true }
 )
 
 const Ingredient = mongoose.model("Ingredient", ingredientSchema)

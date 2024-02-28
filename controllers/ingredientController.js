@@ -13,6 +13,8 @@ const ingredientController = {
       name, carbvalue, quantityvalue, unity, type, userid: req.user.id
     })
 
+    console.log(carbvalue)
+
     try {
       await ingredient.save()
 
