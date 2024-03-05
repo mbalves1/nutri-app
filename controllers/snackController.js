@@ -16,10 +16,8 @@ const snackController = {
       type, name, ingredients, sum, userid: currentUserId
     })
 
-    console.log(ingredients);
-
     try {
-      // await snack.save()
+      await snack.save()
 
       return res.status(201).json({ msg: "Ingrediente registrado criado com sucesso!" })
     } catch (error) {
