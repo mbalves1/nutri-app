@@ -19,10 +19,10 @@ const snackController = {
     try {
       await snack.save()
 
-      return res.status(201).json({ msg: "Ingrediente registrado criado com sucesso!" })
+      return res.status(201).json({ msg: "Refeição registrada criado com sucesso!" })
     } catch (error) {
       console.error(error)
-      throw new Error('Error to get ingredient!');
+      throw new Error('Error para criar refeição!');
     }
   },
 
@@ -35,7 +35,7 @@ const snackController = {
 
     } catch(e) {
       console.error(e);
-      throw new Error('Error to get ingredient!');
+      throw new Error('Error to get snacks!');
     }
   },
 }
