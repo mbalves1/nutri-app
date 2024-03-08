@@ -38,6 +38,25 @@ const snackController = {
       throw new Error('Error to get snacks!');
     }
   },
+
+  deleteSnacks: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const snack = await SnackModel.findById(id);
+
+      if (!snack) {
+        throw new Error('Snack not founded');
+      }
+      
+      const deleteService = await SnackModel.findByIdAndDelete(id)
+
+      res.status(200).json({deleteService, msg: "Snack excluido com sucesso!"})
+
+    } catch(e) {
+      console.error(e);
+      throw new Error('Error to delete snack!');
+    }
+  }
 }
 
 module.exports = snackController
